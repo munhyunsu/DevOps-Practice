@@ -6,6 +6,8 @@ const port = 3003;
 const apiRouter = express.Router();
 
 apiRouter.post('/deploy', (req, res) => {
+  exec('bash /root/update-project.sh', (err, stdout, stderr) => {
+  });
 });
 
 app.use('/myweb/webhook', apiRouter);
