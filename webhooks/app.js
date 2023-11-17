@@ -8,6 +8,10 @@ const apiRouter = express.Router();
 apiRouter.post('/deploy', (req, res) => {
   exec('bash /root/update-project.sh', (err, stdout, stderr) => {
   });
+  exec('pm2 restart start-express', (err, stdout, stderr) => {
+  });
+  exec('pm2 restart start-react', (err, stdout, stderr) => {
+  });
 });
 
 app.use('/myweb/webhook', apiRouter);
