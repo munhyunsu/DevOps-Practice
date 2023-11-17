@@ -7,6 +7,7 @@ const apiRouter = express.Router();
 
 apiRouter.post('/deploy', (req, res) => {
   exec('bash /root/update-project.sh', (err, stdout, stderr) => {
+    console.log(stdout);
   });
   exec('pm2 restart start-express', (err, stdout, stderr) => {
   });
