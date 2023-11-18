@@ -10,6 +10,7 @@ apiRouter.post('/deploy', (req, res) => {
     console.log(stdout);
   });
   exec('pm2 restart start-express', (err, stdout, stderr) => {
+    console.log(stdout);
   });
   exec('pm2 restart start-react', (err, stdout, stderr) => {
   });
