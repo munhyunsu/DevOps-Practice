@@ -1,6 +1,8 @@
+require('dotenv').config();
+
 const express = require('express');
 const app = express();
-const port = 3002;
+const port = process.env.EXPRESS_APP_PORT;
 
 const apiRouter = express.Router();
 
@@ -16,7 +18,7 @@ apiRouter.get('/counter', (req, res) => {
   res.json({'counter': `${counter}`});
 });
 
-app.use('/myweb/api/v1', apiRouter);
+app.use(`${process.env.EXPRESS_APP_URL_PREFIX}`, apiRouter);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
