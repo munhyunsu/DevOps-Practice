@@ -35,7 +35,7 @@ function App() {
           Learn React
         </a>
         <p>
-          Visitors: {counter.counter}
+          Visitors: {counter.counter} From called
         </p>
       </header>
     </div>
